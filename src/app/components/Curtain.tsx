@@ -12,14 +12,13 @@ export default function Curtain() {
             initial={{ x: 0 }}
             animate={{ x: "-100%" }}
             transition={{ duration: 5, ease: [0.8, 0, 0.2, 0.5] }}
-            className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-red-500 via-white-500 to-red-500 z-50"
+            className="absolute top-0 left-0 w-1/2 h-full z-50"
           >
             <Image 
                 src="/curtains_draft.png"
                 alt="Curtain"
-                layout="fill"
-                objectFit="cover"
-                className="opacity-90"
+                fill
+                className="object-cover opacity-100"
             />
           </motion.div>
 
@@ -28,18 +27,17 @@ export default function Curtain() {
             initial={{ x: 0 }}
             animate={{ x: "100%" }}
             transition={{ duration: 5, ease: [0.8, 0, 0.2, 0.5] }}
-            className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-red-500 via-white-500 to-red-500 z-50"
+            className="absolute top-0 right-0 w-1/2 h-full z-50"
           >
             <Image 
                 src="/curtains_draft.png"
                 alt="Curtain"
-                layout="fill"
-                objectFit="cover"
-                className="opacity-90"
+                fill
+                className="object-cover opacity-100 transform scale-x-[-1]"
             />
           </motion.div>
 
-      <div className="absolute inset-0 z-0 flex flex-col items-center justify-center text-white text-5xl font-extrabold tracking-wide">
+      <div className="absolute lg:text-5xl text-3xl inset-0 z-0 flex flex-col items-center justify-center text-white font-extrabold tracking-wide">
         WELCOME!!
       </div>
     </div>
