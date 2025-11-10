@@ -11,7 +11,7 @@ export default function SceneOne() {
       <motion.div
         className="absolute inset-0 w-full h-full z-10"
         initial={{ y: 0 }}
-        animate={{ y: -350 }}
+        animate={{ y: -400 }}
         transition={{ duration: 7, delay: 1, ease: "linear" }}
       >
         <img
@@ -148,3 +148,4 @@ export default function SceneOne() {
     </section>
   );
 }
+
