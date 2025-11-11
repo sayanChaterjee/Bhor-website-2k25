@@ -21,6 +21,11 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>((props, ref) => {
 
 export default function MagazinePage() {
     return (
-      <Book />
+      <div 
+        className="min-h-screen w-full bg-cover bg-center bg-no-repeat" 
+        style={{ backgroundImage: 'url(/book/background.jpg)' }}
+      >
+        <Book />
+      </div>
     );
 }

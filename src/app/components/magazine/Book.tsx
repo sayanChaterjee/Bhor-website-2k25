@@ -64,7 +64,7 @@ function Book() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat relative px-4 lg:px-16" style={{ backgroundImage: 'url(/your-background-image.jpg)' }}>
+    <div className="min-h-screen w-full flex items-center justify-center relative px-4 lg:px-16">
       <div className="relative flex items-center justify-center w-full mx-auto py-8">
         {/* Left Arrow Button */}
         <button
@@ -76,7 +76,7 @@ function Book() {
         </button>
 
         {/* FlipBook */}
-        <div className="flex-shrink-0 w-full flex justify-center">
+        <div className="flex-shrink-0 w-full flex justify-center drop-shadow-1xl">
           <HTMLFlipBook
             ref={bookRef} 
       width={370} 
