@@ -24,7 +24,7 @@ export default function SceneOne() {
 
       {/* Sun Image */}
       <motion.div
-        className="fixed top-[42%] md:top-1/3 left-0 right-0 mx-auto w-[30%] sm:w-[20vw] max-w-[500px] z-20"
+        className="absolute top-[42%] md:top-1/3 left-0 right-0 mx-auto w-[30%] sm:w-[20vw] max-w-[500px] z-20"
         initial={{ y: 300 }}
         animate={{ y: -30 }}
         transition={{ duration: 5, delay: 1, ease: "easeOut" }}
@@ -37,7 +37,7 @@ export default function SceneOne() {
       </motion.div>
 
       {/* Ground Layers */}
-      <div className="fixed bottom-[-50] left-0 w-full h-2/3 z-30 overflow-hidden">
+      <div className="absolute bottom-[-50] left-0 w-full h-2/3 z-30 overflow-hidden">
 
         <motion.img
           src="/Ground_layer1_Mobile.png"
@@ -75,7 +75,7 @@ export default function SceneOne() {
 
         {/* Person 1 */}
       <motion.div
-        className="fixed bottom-18 left-[15%] w-[200px] h-[200px] md:w-[350px] md:h-[350px] max-w-[400px] max-h-[400px] z-40"
+        className="absolute bottom-18 left-[15%] w-[200px] h-[200px] md:w-[350px] md:h-[350px] max-w-[400px] max-h-[400px] z-40"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 160, opacity: 1 }}
         transition={{ duration: 3, delay: 3, ease: "easeOut" }}
@@ -100,7 +100,7 @@ export default function SceneOne() {
 
         {/* Person 2 */}
       <motion.div
-        className="fixed bottom-[200px] right-[10%] w-[120px] h-[120px] md:w-[230px] md:h-[230px] max-w-[250px] max-h-[250px] z-40 hidden lg:block"
+        className="absolute bottom-[200px] right-[10%] w-[120px] h-[120px] md:w-[230px] md:h-[230px] max-w-[250px] max-h-[250px] z-40 hidden lg:block"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: -60, opacity: 1 }}
         transition={{ duration: 3, delay: 3.5, ease: "easeOut" }}
@@ -123,7 +123,7 @@ export default function SceneOne() {
 
           {/* Person 3 */}
       <motion.div
-        className="fixed bottom-[250px] left-[2%] w-[120px] h-[120px] md:w-[200px] md:h-[200px] max-w-[250px] max-h-[250px] z-40"
+        className="absolute bottom-[250px] left-[2%] w-[120px] h-[120px] md:w-[200px] md:h-[200px] max-w-[250px] max-h-[250px] z-40"
         initial={{ x: 0, opacity: 0 }}
         animate={{ x: 50, opacity: 1 }}
         transition={{ duration: 3, delay: 3, ease: "easeOut" }}

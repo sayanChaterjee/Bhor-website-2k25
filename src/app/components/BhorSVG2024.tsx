@@ -1,7 +1,10 @@
-const BhorSvgSecond = () => {
+import React from 'react'
+
+const BhorSVG2023 = () => {
   return (
     <div>
-      <svg
+      
+       <svg
         className="fill-white shadow1 stroke-2 w-[200px] md:w-80 stroke-white z-30"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 322.51014 207.15912"
@@ -42,8 +45,9 @@ const BhorSvgSecond = () => {
           />
         </g>
       </svg>
-    </div>
-  );
-};
 
-export default BhorSvgSecond;
+    </div>
+  )
+}
+
+export default BhorSVG2023

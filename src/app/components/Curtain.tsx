@@ -15,7 +15,7 @@ export default function Curtain({ onAnimationComplete } : { onAnimationComplete:
             className="absolute top-0 left-0 w-1/2 h-full z-100"
           >
             <Image 
-                src="/curtains_draft.png"
+                src="/Curtain_2.png"
                 alt="Curtain"
                 fill
                 className="object-cover opacity-100"
@@ -31,7 +31,7 @@ export default function Curtain({ onAnimationComplete } : { onAnimationComplete:
             className="absolute top-0 right-0 w-1/2 h-full z-100"
           >
             <Image 
-                src="/curtains_draft.png"
+                src="/Curtain_2.png"
                 alt="Curtain"
                 fill
                 className="object-cover opacity-100 transform scale-x-[-1]"
