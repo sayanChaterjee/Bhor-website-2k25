@@ -90,13 +90,13 @@ const AutoCarousel = ({
       {/* Navigation Arrows */}
       <button
         onClick={handlePrev}
-        className="z-[2] absolute left-8 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full hover:bg-gray-600"
+        className="z-[2] absolute left-20 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full hover:bg-gray-600"
       >
         <IoIosArrowBack className="text-2xl" />
       </button>
       <button
         onClick={handleNext}
-        className="z-[2] absolute right-2 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full hover:bg-gray-600"
+        className="z-[2] absolute right-20 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full hover:bg-gray-600"
       >
         <IoIosArrowForward className="text-2xl" />
       </button>
