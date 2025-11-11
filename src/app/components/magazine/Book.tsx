@@ -1,9 +1,10 @@
 'use client'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import HTMLFlipBook from "react-pageflip";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 function Book() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const bookRef = useRef<any>(null);
 
   const pokemonData = [
@@ -106,7 +107,7 @@ function Book() {
       <div className="page" style={{ background: 'transparent' }}>
         <div className="page-content cover">
           <img 
-            src="./book/1.jpg" 
+            src="./book/1-min.jpg" 
             alt="Pokémon Logo" 
             className="pokemon-logo"
           />
@@ -118,7 +119,7 @@ function Book() {
           <div className="page-content">
             <div className="pokemon-container">
               <img 
-                src={`/book/${index + 2}.jpg`} 
+                src={`/book/${index + 2}-min.jpg`} 
                 alt={pokemon.name} 
               />
              

@@ -55,9 +55,14 @@ export interface IBookState {
 }
 
 export interface IEventProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onFlip?: (flipEvent: any) => void;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onChangeOrientation?: (flipEvent: any) => void;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onChangeState?: (flipEvent: any) => void;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onInit?: (flipEvent: any) => void;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onUpdate?: (flipEvent: any) => void;
 }

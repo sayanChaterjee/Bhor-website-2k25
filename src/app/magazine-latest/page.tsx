@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-import { HTMLFlipBook } from '../components/magazine/html-flip-book';
 import Book from '../components/magazine/Book';
 
 

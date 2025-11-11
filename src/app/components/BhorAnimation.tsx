@@ -1,4 +1,4 @@
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
 
 interface BhorAnimationProps {
@@ -8,15 +8,6 @@ interface BhorAnimationProps {
 const animationDuration = 5; // Change animation duration here
 const transition = {
   duration: animationDuration,
-  strokeOpacity: {
-    delay: animationDuration,
-  },
-  fillOpacity: {
-    delay: animationDuration,
-  },
-};
-const transition2 = {
-  duration:4* animationDuration,
   strokeOpacity: {
     delay: animationDuration,
   },

@@ -7,7 +7,6 @@ import BhorSvgFirst from "./BhorSvgFirst";
 import BhorSvgSecond from "./BhorSvgSecond";
 
 import { motion } from "framer-motion";
-import { tr } from "framer-motion/client";
 
 interface SecondSectionProps {
   bhorEnded: boolean;
@@ -96,7 +95,3 @@ const SecondSection = ({
 };
 
 export default SecondSection;
-function useImagePreloader() {
-  throw new Error("Function not implemented.");
-}
-
