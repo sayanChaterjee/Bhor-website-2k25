@@ -1,18 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import Curtain from "./components/Curtain";
-import Carousel from "./components/Carousel";
 import SceneOne from "./components/SceneOne";
-import Border from "./components/Border";
 import SceneOneMobile from "./components/SceneOneMobile";
 import SecondSection from "./components/SecondSection";
 
 export default function Home() {
 
   const [canScroll, setCanScroll] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [dwnldIsClicked, setDwnldIsClicked] = useState(false);
   const [magNo, setMagNo] = useState(0);
   const [bhorEnded, setBhorEnded] = useState(false);

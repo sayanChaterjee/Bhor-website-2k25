@@ -94,7 +94,3 @@ const SecondSection = ({
 };
 
 export default SecondSection;
-function useImagePreloader() {
-  throw new Error("Function not implemented.");
-}
-

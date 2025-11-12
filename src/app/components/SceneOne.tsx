@@ -1,9 +1,8 @@
 'use client';
 
 import React from "react";
-import Image from "next/image";
 import Ground from "./Ground";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function SceneOne() {
   return (

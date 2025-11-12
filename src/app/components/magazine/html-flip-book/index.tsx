@@ -17,8 +17,8 @@ interface IProps extends IFlipSetting, IEventProps {
     renderOnlyPageLengthChange?: boolean;
 }
 
-const HTMLFlipBookForward = React.forwardRef<PageFlip, IProps>(
-    (props: IProps, ref) => {
+const HTMLFlipBookForward = React.forwardRef<PageFlip, IProps>(function HTMLFlipBookForward(
+    props: IProps, ref) {
         const htmlElementRef = useRef<HTMLDivElement>(null);
         const childRef = useRef<HTMLElement[]>([]);
         const pageFlip = useRef<PageFlip | undefined>(undefined);
@@ -57,6 +57,7 @@ const HTMLFlipBookForward = React.forwardRef<PageFlip, IProps>(
                                 childRef.current.push(dom);
                             }
                         },
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     } as any);
                 });
 
@@ -102,6 +103,7 @@ const HTMLFlipBookForward = React.forwardRef<PageFlip, IProps>(
                 removeHandlers();
 
                 if (htmlElementRef.current && !pageFlip.current) {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     pageFlip.current = new PageFlip(htmlElementRef.current, props as any);
                 }
 

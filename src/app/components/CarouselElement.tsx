@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import DownloadButton from "./DownloadButton";
 
 interface Magazine {
@@ -22,6 +23,14 @@ const CarouselElement = ({
   magazine,
   direction,
 }: CarouselElementProps) => {
+  const router = useRouter();
+
+  const handleViewClick = () => {
+    // Redirect based on magazine index: 0 -> latest, 1 -> old
+    const route = magazine.index === 0 ? '/magazine-latest' : '/magazine-old';
+    router.push(route);
+  };
+
   return (
     <motion.div
       className="absolute flex flex-col items-center gap-4 justify-center text-white h-fit w-fit"
@@ -40,12 +49,34 @@ const CarouselElement = ({
         className="h-[50vh] sm:h-[50vh] md:h-[60vh] w-auto object-contain"
       />
 
-      {/* Download Button */}
-      <DownloadButton
-        setMagNo={setMagNo}
-        magazine={magazine}
-        setDwnldIsClicked={setDwnldIsClicked}
-      />
+      {/* Buttons */}
+      <div className="flex gap-4 items-center justify-center">
+        {/* View Button */}
+        <motion.button
+          onClick={handleViewClick}
+          className="relative py-3 px-8 text-xl font-semibold rounded-full text-white bg-transparent overflow-hidden focus:outline-none shadow-[0px_5px_30px_rgba(255,255,255,0.6)] hover:shadow-[0px_5px_30px_rgba(255,255,255,0.8)] transition-all duration-400 mt-6"
+          whileHover={{
+            scale: 1.05,
+            backgroundColor: "rgba(255, 255, 255, .6)",
+            color: "white",
+            transition: { duration: 0.1 },
+          }}
+          whileTap={{
+            scale: 0.95,
+            boxShadow: "0px 10px 20px rgba(255, 255, 255, 0.3)",
+            transition: { duration: 0.2 },
+          }}
+        >
+          <span className="relative z-10">View</span>
+        </motion.button>
+
+        {/* Download Button */}
+        <DownloadButton
+          setMagNo={setMagNo}
+          magazine={magazine}
+          setDwnldIsClicked={setDwnldIsClicked}
+        />
+      </div>
     </motion.div>
   );
 };
