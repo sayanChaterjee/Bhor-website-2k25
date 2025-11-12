@@ -5,9 +5,7 @@ import AutoCarousel from "./Carousel";
 import useResponsiveScrollRatio from "./parallaxRatio";
 import BhorSvgFirst from "./BhorSvgFirst";
 import BhorSvgSecond from "./BhorSvgSecond";
-
 import { motion } from "framer-motion";
-import { tr } from "framer-motion/client";
 
 interface SecondSectionProps {
   bhorEnded: boolean;

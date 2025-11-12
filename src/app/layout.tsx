@@ -56,7 +56,17 @@ export default function RootLayout({
         
                 {/* LEFT BORDER — fixed alignment and size */}
                 
-                  <div className="absolute w-full h-full left-[47.8%]">
+                  <div className="absolute left-0 lg:w-18 w-6 h-full min-h-[20px] max-h-[60px]">
+                    <Image 
+                            src="/BorderVertical.png"
+                            alt="Border"
+                            width={1920}
+                            height={1080}
+                            className="w-full h-auto z-100"
+                          />
+                  </div>
+
+                  <div className="lg:hidden absolute bottom-85 left-0 lg:w-18 w-6 h-full min-h-[20px] max-h-[60px]">
                     <Image 
                             src="/BorderVertical.png"
                             alt="Border"
@@ -68,7 +78,17 @@ export default function RootLayout({
         
                 {/* RIGHT BORDER — fixed alignment and size */}
                 
-                  <div className="w-full h-full left-[-47.8%] absolute">
+                  <div className="lg:hidden absolute bottom-85 right-0 lg:w-18 w-6 h-full min-h-[20px] max-h-[60px]">
+                    <Image 
+                            src="/BorderVertical.png"
+                            alt="Border"
+                            width={1920}
+                            height={1080}
+                            className="w-full h-auto z-100"
+                          />
+                  </div>
+
+                  <div className="absolute right-0 lg:w-18 w-6 h-full min-h-[20px] max-h-[60px]">
                     <Image 
                             src="/BorderVertical.png"
                             alt="Border"
