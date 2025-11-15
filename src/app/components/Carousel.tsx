@@ -1,0 +1,115 @@
+import React, { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { Images } from "../assets/CloudinaryAssets";
+import CarouselElement from "./CarouselElement";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+
+const Magazines = [
+  {
+    index: 0,
+    year: 2023,
+    title: "Bhor 2023",
+    image: Images.bhor2023,
+    url: "/magazineview2023",
+  },
+  {
+    index: 1,
+    year: 2024,
+    title: "Bhor 2024",
+    image: Images.bhor2024,
+    url: "/magazineview2024",
+  },
+  {
+    index: 2,
+    year: 2025,
+    title: "Bhor 2025",
+    image: Images.bhor2025,
+    url: "/magazineview2024",
+  },
+];
+
+
+interface AutoCarouselProps {
+  currentIndex: number;
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
+  setViewClicked: React.Dispatch<React.SetStateAction<boolean>>;
+  setDwnldIsClicked: React.Dispatch<React.SetStateAction<boolean>>;
+  setMagNo: React.Dispatch<React.SetStateAction<number>>;
+  bhorEnded: boolean;
+  hasAppeared: boolean;
+}
+
+const AutoCarousel = ({
+  setMagNo,
+  setDwnldIsClicked,
+  hasAppeared,
+  currentIndex,
+  setCurrentIndex,
+  bhorEnded,
+}: AutoCarouselProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [direction, setDirection] = useState(1); // 1 for left-to-right, -1 for right-to-left
+
+  useEffect(() => {
+    if (isHovered || !hasAppeared || !bhorEnded) return;
+
+    setDirection(1);
+    const interval = setInterval(() => {
+      setDirection(-1); // Always slide left-to-right for auto transitions
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % Magazines.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isHovered, bhorEnded, setCurrentIndex, hasAppeared]);
+
+  const handleNext = () => {
+    setDirection(-1); // Left-to-right
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % Magazines.length);
+  };
+
+  const handlePrev = () => {
+    setDirection(1); // Right-to-left
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? Magazines.length - 1 : prevIndex - 1
+    );
+  };
+
+  return (
+    <div
+      className="relative overflow-hidden h-[100%] w-[100vw] md:w-[50vw] flex flex-col items-center justify-center"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <AnimatePresence initial={false} custom={direction}>
+        {Magazines.map((magazine, index) =>
+          index === currentIndex ? (
+            <CarouselElement
+              setMagNo={setMagNo}
+              setDwnldIsClicked={setDwnldIsClicked}
+              key={index}
+              magazine={magazine}
+              direction={direction}
+            />
+          ) : null
+        )}
+      </AnimatePresence>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={handlePrev}
+        className="z-[2] absolute lg:left-20 left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full hover:bg-gray-600"
+      >
+        <IoIosArrowBack className="text-2xl" />
+      </button>
+      <button
+        onClick={handleNext}
+        className="z-[2] absolute lg:right-20 right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full hover:bg-gray-600"
+      >
+        <IoIosArrowForward className="text-2xl" />
+      </button>
+    </div>
+  );
+};
+
+export default AutoCarousel;

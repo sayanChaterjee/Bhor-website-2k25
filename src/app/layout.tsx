@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,50 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#001d41]`}
       >
         {children}
+        <div className="fixed inset-0 z-50 pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-[5vw] md:h-[3vw] min-h-[20px] max-h-[60px] ">
+            <Image
+              src="/Border.png"
+              alt="Border"
+              width={1920}
+              height={1080}
+              className="w-full h-full z-50"
+            />
+          </div>
+
+          <div className="absolute bottom-0 left-0 w-full h-[3vw] min-h-[20px] max-h-[60px]">
+            <Image
+              src="/Border.png"
+              alt="Border"
+              width={1920}
+              height={1080}
+              className="w-full h-full z-50"
+            />
+          </div>
+
+          <div className="absolute left-0 top-0 lg:w-12 w-6 h-full">
+            <Image
+              src="/BorderVertical.png"
+              alt="Border"
+              width={1920}
+              height={1080}
+              className="w-full h-full z-100"
+            />
+          </div>
+
+          <div className="absolute right-0 top-0 lg:w-12 w-6 h-full">
+            <Image
+              src="/BorderVertical.png"
+              alt="Border"
+              width={1920}
+              height={1080}
+              className="w-full h-full z-100"
+            />
+          </div>
+        </div>
       </body>
     </html>
   );
