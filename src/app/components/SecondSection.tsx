@@ -46,12 +46,6 @@ const SecondSection = ({
   }, [inView, hasAppeared]);
 
   useEffect(() => {
-    if (currentIndex !== 0) {
-      setHasChanged(true);
-    }
-  }, [currentIndex]);
-
-  useEffect(() => {
     const vid = videoRef.current;
     if (!vid) return;
     vid.playbackRate = 0.6;

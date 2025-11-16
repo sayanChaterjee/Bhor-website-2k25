@@ -34,9 +34,9 @@ const handleDownload = () => {
   return (
     <motion.button
       onClick={handleDownload}
-      className="relative py-3 px-8 text-xl font-semibold rounded-full text-gray-800 bg-gray-200 hover:bg-gray-300 overflow-hidden focus:outline-none transition-all duration-300 mt-6 cursor-pointer z-10"
+      className="relative py-2 px-6 text-lg font-semibold rounded-full text-gray-800 bg-gray-200 hover:bg-gray-300 overflow-hidden focus:outline-none transition-all duration-300 mt-6 cursor-pointer z-10"
       whileHover={{
-        scale: 1.1,
+        scale: 1.05,
         transition: { duration: 0.2 },
       }}
       whileTap={{

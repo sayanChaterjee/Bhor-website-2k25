@@ -1,7 +1,7 @@
 "use client";
 
 import { notFound } from "next/navigation";
-import React, { useRef, useEffect } from 'react'
+import React, { use, useRef, useEffect } from 'react'
 import HTMLFlipBook from "react-pageflip";
 import { Videos } from "@/app/assets/CloudinaryAssets";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -13,15 +13,9 @@ const magazines: Record<string, string[]> = {
   "2025": bhorPages2025,
 };
 
-export default function MagazinePage({
-  params,
-}: {
-  params: { year: string };
-}) {
-  const { year } = params;
+export default function MagazinePage({ params }: { params: Promise<{ year: string }> }) {
+  const { year } = use(params);
   const pages = magazines[year];
-
-  if (!pages) return notFound(); // handle invalid years
 
     const bookRef = useRef<any>(null);
     const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -56,8 +50,10 @@ export default function MagazinePage({
                       return () => vid.removeEventListener("loadedmetadata", onLoaded);
                     }, []);
 
+    if (!pages) return notFound(); // handle invalid years
+
   return (
-    <div className="h-screen w-full flex items-center justify-center relative px-4 lg:px-16 overflow-hidden -mt-8 md:mt-0">
+    <div className="h-screen w-full flex items-center justify-center relative px-4 lg:px-16 overflow-hidden">
 
          <video
                                 ref={videoRef}
@@ -90,14 +86,14 @@ export default function MagazinePage({
             {/* Left Arrow Button */}
             <button
               onClick={handlePrevPage}
-              className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+              className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-11 cursor-pointer"
               aria-label="Previous page"
             >
               <IoIosArrowBack className="text-xl md:text-3xl text-gray-800" />
             </button>
     
             {/* FlipBook */}
-            <div className="flex-shrink-0 w-full flex justify-center items-center scale-90 md:scale-100">
+            <div className="flex-shrink-0 w-full flex justify-center items-center scale-90 md:scale-115">
               <HTMLFlipBook
                 ref={bookRef} 
           width={370} 
@@ -138,7 +134,7 @@ export default function MagazinePage({
             <div className="page" key={index}>
               <div className="page-content">
                 <div className="bhor-container">
-                  <img 
+                  <img
                     src={`/book/${item}`} 
                     alt={`bhor${year}`} 
                   />
@@ -153,7 +149,7 @@ export default function MagazinePage({
             {/* Right Arrow Button */}
             <button
               onClick={handleNextPage}
-              className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+              className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 cursor-pointer"
               aria-label="Next page"
             >
               <IoIosArrowForward className="text-xl md:text-3xl text-gray-800" />
