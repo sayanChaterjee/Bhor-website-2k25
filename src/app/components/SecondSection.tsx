@@ -119,9 +119,6 @@ const SecondSection = ({
       </div>
       {!smallScreen && (
         <div className="h-screen w-[50vw] flex flex-col justify-center items-center">
-          {hasAppeared && !bhorEnded ? (
-            <BhorAnimation setBhorEnded={setBhorEnded} />
-          ) : (
             <motion.div
               key={currentIndex}
               style={{ opacity: 1 }}
@@ -130,7 +127,6 @@ const SecondSection = ({
             >
               {currentIndex == 0 ? <BhorSvgFirst /> : currentIndex == 1 ? <BhorSvgSecond /> : <BhorSVG2025 />}
             </motion.div>
-          )}
         </div>
       )}
       <div className="pt-0 lg:pt-[14vh] h-screen w-fit mb-20">

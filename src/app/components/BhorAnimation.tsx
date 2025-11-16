@@ -27,7 +27,7 @@ const variants = {
 
 const BhorAnimation = ({ setBhorEnded }: BhorAnimationProps) => {
   const controls = useAnimation();
-  const startDelaySeconds = 4; // Delay before starting the animation
+  const startDelaySeconds = 6; // Delay before starting the animation
 
   useEffect(() => {
     const t = setTimeout(() => {
