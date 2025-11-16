@@ -17,7 +17,7 @@ export default function MagazinePage({ params }: { params: Promise<{ year: strin
   const { year } = use(params);
   const pages = magazines[year];
 
-    const bookRef = useRef<any>(null);
+    const bookRef = useRef<React.ComponentRef<typeof HTMLFlipBook>>(null);
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const videoRefMobile = useRef<HTMLVideoElement | null>(null);
   
