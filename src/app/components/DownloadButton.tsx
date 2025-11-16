@@ -16,6 +16,8 @@ interface Magazine {
 
 const DownloadButton = ({ setMagNo, magazine, setDwnldIsClicked }: DownloadButtonProps) => {
 
+  magazine.url = `/pdfs/Bhor${magazine.year}.pdf`;
+
 const handleDownload = () => {
   setDwnldIsClicked(true);
   setMagNo(magazine.index);

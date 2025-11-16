@@ -5,12 +5,12 @@ import React, { useRef, useEffect } from 'react'
 import HTMLFlipBook from "react-pageflip";
 import { Videos } from "@/app/assets/CloudinaryAssets";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { bhorPages2023, bhorPages2024 } from "@/app/assets/bhorMagazines";
+import { bhorPages2023, bhorPages2024, bhorPages2025 } from "@/app/assets/bhorMagazines";
 
 const magazines: Record<string, string[]> = {
   "2023": bhorPages2023,
   "2024": bhorPages2024,
-//   "2025": bhorPages2025,
+  "2025": bhorPages2025,
 };
 
 export default function MagazinePage({

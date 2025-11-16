@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import { Images } from "./assets/CloudinaryAssets";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,7 +53,7 @@ export default function RootLayout({
         <div className="fixed inset-0 z-50 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-[5vw] md:h-[3vw] min-h-[20px] max-h-[60px] ">
             <Image
-              src="/Border.png"
+              src={Images.borderHorizontal}
               alt="Border"
               width={1920}
               height={1080}
@@ -62,7 +63,7 @@ export default function RootLayout({
 
           <div className="w-full h-[3vw] min-h-[20px] max-h-[60px]">
             <Image
-              src="/Border.png"
+              src={Images.borderHorizontal}
               alt="Border"
               width={1920}
               height={1080}
@@ -72,7 +73,7 @@ export default function RootLayout({
 
           <div className="fixed left-0 top-0 lg:w-12 w-6 h-full">
             <Image
-              src="/BorderVertical.png"
+              src={Images.borderVertical}
               alt="Border"
               width={1920}
               height={1080}
@@ -82,7 +83,7 @@ export default function RootLayout({
 
           <div className="fixed right-0 top-0 lg:w-12 w-6 h-full">
             <Image
-              src="/BorderVertical.png"
+              src={Images.borderVertical}
               alt="Border"
               width={1920}
               height={1080}
