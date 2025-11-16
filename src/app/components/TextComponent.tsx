@@ -30,7 +30,7 @@ const TextComponent = ({ setAllAnimationEnd }: TextComponentProps) => {
             restDelta: 0.001,
           },
         }}
-        className="text-2xl md:text-4xl text-center font-bold uppercase w-full text1  block"
+        className="text-lg md:text-4xl text-center font-bold uppercase w-full text1  block"
       >
         <h1 className="font-extrabold uppercase tracking-wider
                        bg-white bg-clip-text text-transparent
@@ -76,7 +76,7 @@ const TextComponent = ({ setAllAnimationEnd }: TextComponentProps) => {
               restDelta: 0.001,
             },
           }}
-          className="lg:text-2xl text-center text-xl font-bold w-full uppercase text1 mb-2"
+          className="lg:text-2xl text-center text-md font-bold w-full uppercase text1 mb-2"
         >
             <h1 className="font-extrabold uppercase tracking-wider
                        bg-white bg-clip-text text-transparent
@@ -102,12 +102,12 @@ const TextComponent = ({ setAllAnimationEnd }: TextComponentProps) => {
               restDelta: 0.001,
             },
           }}
-          className="lg:text-3xl md:text-lg text-center text-md font-2xl w-full text1 "
+          className="lg:text-3xl md:text-lg text-center text-md font-2xl w-full text1"
         >
             <h1 className={`tracking-wider
                        bg-white bg-clip-text text-transparent
                        drop-shadow-[0_6px_18px_rgba(99,102,241,0.12)] ${styleScript.className}`}>
-          Presents
+          presents
           </h1>
         </motion.div>
       </div>

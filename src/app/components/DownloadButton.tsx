@@ -15,24 +15,28 @@ interface Magazine {
 }
 
 const DownloadButton = ({ setMagNo, magazine, setDwnldIsClicked }: DownloadButtonProps) => {
-  const handleDownload = () => {
-    setDwnldIsClicked(true);
-    setMagNo(magazine.index);
-    // Trigger file download
-    const link = document.createElement('a');
-    link.href = magazine.url;
-    link.download = magazine.url.split('/').pop() || 'magazine.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+
+  magazine.url = `/pdfs/Bhor${magazine.year}.pdf`;
+
+const handleDownload = () => {
+  setDwnldIsClicked(true);
+  setMagNo(magazine.index);
+
+  const link = document.createElement("a");
+  link.href = magazine.url;
+  link.download = `Bhor${magazine.year}.pdf`;   // cleaner
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   return (
     <motion.button
       onClick={handleDownload}
-      className="relative py-3 px-8 text-xl font-semibold rounded-full text-gray-800 bg-gray-200 hover:bg-gray-300 overflow-hidden focus:outline-none transition-all duration-300 mt-6 cursor-pointer z-10"
+      className="relative py-2 px-6 text-lg font-semibold rounded-full text-gray-800 bg-gray-200 hover:bg-gray-300 overflow-hidden focus:outline-none transition-all duration-300 mt-6 cursor-pointer z-10"
       whileHover={{
-        scale: 1.1,
+        scale: 1.05,
         transition: { duration: 0.2 },
       }}
       whileTap={{

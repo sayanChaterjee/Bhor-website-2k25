@@ -1,15 +1,53 @@
 'use client';
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Ground from "./Ground";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Images } from '../assets/CloudinaryAssets';
-// import BhorAnimation from "./BhorAnimation";
+import BhorAnimation from "./BhorAnimation";
 
-export default function SceneOne() {
+export default function SceneOne({ setBhorEnded } : {
+        bhorEnded: boolean;
+        setBhorEnded: React.Dispatch<React.SetStateAction<boolean>>;
+    }) {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      // Logo disappears when scrolled down, reappears when scrolled back up
+      setIsVisible(scrollPosition < 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="relative w-full h-screen overflow-hidden">
+
+      {/* Sky Background with Bhor Animation */}
+            <div className="absolute inset-x-0 z-30 flex justify-center pt-4 px-4 mt-45">
+                <BhorAnimation setBhorEnded={setBhorEnded} />
+            </div>
+
+      {/* KGEC Logo on top of the screen */}
+      <motion.div
+        className="fixed top-4 md:top-11 left-22 -translate-x-1/2 z-50 mt-5"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 7, ease: "easeOut" }}
+      >
+        <motion.img
+          src="/kgecLogo.webp"
+          alt="KGEC Logo"
+          initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-8 h-8 md:w-12 md:h-12 object-contain"
+        />
+      </motion.div>
 
       {/* SKy Image */}
       <motion.div
@@ -50,15 +88,15 @@ export default function SceneOne() {
         <Ground />
       </div>
 
-        {/* Person 1 */}
+      {/* Person 1 */}
       <motion.div
-        className="absolute bottom-18 left-[15%] w-[200px] h-[200px] md:w-[350px] md:h-[350px] max-w-[400px] max-h-[400px] z-40"
+        className="absolute bottom-18 left-[15%] w-[200px] h-[200px] md:w-[320px] md:h-[320px] max-w-[400px] max-h-[400px] z-40"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 160, opacity: 1 }}
         transition={{ duration: 3, delay: 3, ease: "easeOut" }}
       >
 
-        
+
         <motion.img
           src={Images.person1}
           alt="Person 1"
@@ -75,7 +113,7 @@ export default function SceneOne() {
         />
       </motion.div>
 
-        {/* Person 2 */}
+      {/* Person 2 */}
       <motion.div
         className="absolute bottom-[200px] right-[10%] w-[120px] h-[120px] md:w-[230px] md:h-[230px] max-w-[250px] max-h-[250px] z-40 hidden lg:block"
         initial={{ x: 100, opacity: 0 }}
@@ -98,7 +136,7 @@ export default function SceneOne() {
         />
       </motion.div>
 
-          {/* Person 3 */}
+      {/* Person 3 */}
       <motion.div
         className="absolute bottom-[250px] left-[2%] w-[120px] h-[120px] md:w-[200px] md:h-[200px] max-w-[250px] max-h-[250px] z-40"
         initial={{ x: 0, opacity: 0 }}
@@ -106,7 +144,7 @@ export default function SceneOne() {
         transition={{ duration: 3, delay: 3, ease: "easeOut" }}
       >
 
-        
+
         <motion.img
           src={Images.person2}
           alt="Person 3"

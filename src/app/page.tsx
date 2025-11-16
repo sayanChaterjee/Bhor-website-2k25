@@ -50,15 +50,16 @@ export default function Home() {
   }, [viewClicked, dwnldIsClicked, magNo, Router, showCurtain]);
 
   return (
-    <>
+    <div className="bg-[#001d41] snap-y snap-mandatory">
       {!canScroll && (
         <div className="absolute top-0 left-0 w-full h-full z-[100]">
           <Curtain onAnimationComplete={handleCurtain} />
         </div>
       )}
 
+      <div className="snap-center">
       <div className="hidden lg:block">
-        <SceneOne />
+        <SceneOne bhorEnded={bhorEnded} setBhorEnded={setBhorEnded} />
       </div>
 
       <div className="block lg:hidden">
@@ -76,19 +77,22 @@ export default function Home() {
         </div>
       )} */}
 
-      {/* Black shadow effect */}
+      {/* Black shadow effect
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none"
         style={{
           background:
             "radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%)",
         }}
-      />
+      /> */}
 
       {allAnimationEnd && (
         <>
           <DownArrow setArrowClicked={setArrowClicked} />
+          </>)}
+          </div>
 
+          <div className="snap-center">
             <SecondSection
               bhorEnded={bhorEnded}
               setBhorEnded={setBhorEnded}
@@ -96,8 +100,8 @@ export default function Home() {
               setDwnldIsClicked={setDwnldIsClicked}
               setMagNo={setMagNo}
             />
-        </>
-      )}
-    </>
-  );
+            </div>
+      
+</div>
+);
 }

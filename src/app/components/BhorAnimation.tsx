@@ -40,12 +40,12 @@ const BhorAnimation = ({ setBhorEnded }: BhorAnimationProps) => {
     <div className="z-70 w-fit flex felx-col justify-center h-fit items-center">
       <motion.div
         transition={{ delay: 2 }}
-        className="w-fit flex flex-col justify-center items-center"
+        className="absolute top-16 w-fit flex flex-col justify-center items-center"
         style={{ zIndex: 50 }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="fill-white shadow1 stroke-2 w-[200px] md:w-80 stroke-white z-30"
+          className="fill-white shadow1 stroke-2 w-[200px] md:w-35 stroke-white z-30"
           viewBox="0 0 252.15 160.49"
           id="vorImg"
         >
@@ -60,6 +60,9 @@ const BhorAnimation = ({ setBhorEnded }: BhorAnimationProps) => {
                 />
                 <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
               </filter>
+              <filter id="strokeShadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.6" floodColor="#000000" />
+              </filter>
             </defs>
           </defs>
           <g id="Layer_1" data-name="Layer 1">
@@ -68,6 +71,7 @@ const BhorAnimation = ({ setBhorEnded }: BhorAnimationProps) => {
                 fill="#fff"
                 stroke="#fff"
                 strokeWidth="0.5"
+                filter="url(#strokeShadow)"
                 variants={variants}
                 initial="initial"
                 animate={controls}
@@ -79,6 +83,7 @@ const BhorAnimation = ({ setBhorEnded }: BhorAnimationProps) => {
                 fill="#fff"
                 stroke="#fff"
                 strokeWidth="0.5"
+                filter="url(#strokeShadow)"
                 variants={variants}
                 initial="initial"
                 animate={controls}
@@ -94,6 +99,7 @@ const BhorAnimation = ({ setBhorEnded }: BhorAnimationProps) => {
                 fill="#fff"
                 stroke="#fff"
                 strokeWidth="0.5"
+                filter="url(#strokeShadow)"
                 variants={variants}
                 initial="initial"
                 animate={controls}
@@ -105,6 +111,7 @@ const BhorAnimation = ({ setBhorEnded }: BhorAnimationProps) => {
                 fill="#fff"
                 stroke="#fff"
                 strokeWidth="0.5"
+                filter="url(#strokeShadow)"
                 variants={variants}
                 initial="initial"
                 animate={controls}
@@ -116,6 +123,7 @@ const BhorAnimation = ({ setBhorEnded }: BhorAnimationProps) => {
                 fill="#fff"
                 stroke="#fff"
                 strokeWidth="0.5"
+                filter="url(#strokeShadow)"
                 variants={variants}
                 initial="initial"
                 animate={controls}
@@ -128,6 +136,7 @@ const BhorAnimation = ({ setBhorEnded }: BhorAnimationProps) => {
                 fill="#fff"
                 stroke="#fff"
                 strokeWidth="0.5"
+                filter="url(#strokeShadow)"
                 variants={variants}
                 initial="initial"
                 animate={controls}

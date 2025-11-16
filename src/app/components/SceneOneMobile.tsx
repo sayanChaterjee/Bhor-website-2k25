@@ -115,7 +115,7 @@ export default function SceneOne({ setBhorEnded } : {
 
             {/* Person 1 */}
             <motion.div
-                className="absolute bottom-[50px] w-[210px] h-[210px] md:w-[350px] md:h-[350px] max-w-[400px] max-h-[400px] z-40 translate scale-x-[-1]"
+                className="absolute bottom-[50px] w-[200px] h-[200px] md:w-[320px] md:h-[320px] max-w-[400px] max-h-[400px] z-40 translate scale-x-[-1]"
                 initial={{ x: -230, opacity: 0 }}
                 animate={{ x: -170, opacity: 1 }}
                 transition={{ duration: 3, delay: 3, ease: "easeOut" }}
@@ -163,7 +163,7 @@ export default function SceneOne({ setBhorEnded } : {
 
             {/* Person 3 */}
             <motion.div
-                className="absolute bottom-[220px] left-[1%] w-[170px] h-[170px] md:w-[200px] md:h-[200px] max-w-[250px] max-h-[250px] z-40"
+                className="absolute bottom-[220px] left-0 w-[170px] h-[170px] md:w-[200px] md:h-[200px] max-w-[250px] max-h-[250px] z-40"
                 initial={{ x: 0, opacity: 0 }}
                 animate={{ x: 50, opacity: 1 }}
                 transition={{ duration: 3, delay: 3, ease: "easeOut" }}

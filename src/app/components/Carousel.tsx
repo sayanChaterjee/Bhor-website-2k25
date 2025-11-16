@@ -11,21 +11,21 @@ const Magazines = [
     year: 2023,
     title: "Bhor 2023",
     image: Images.bhor2023,
-    url: "/magazineview2023",
+    url: "/pdfs/Bhor2023",
   },
   {
     index: 1,
     year: 2024,
     title: "Bhor 2024",
     image: Images.bhor2024,
-    url: "/magazineview2024",
+    url: "/pdfs/Bhor2024",
   },
   {
     index: 2,
     year: 2025,
     title: "Bhor 2025",
     image: Images.bhor2025,
-    url: "/magazineview2024",
+    url: "/pdfs/Bhor2025",
   },
 ];
 
